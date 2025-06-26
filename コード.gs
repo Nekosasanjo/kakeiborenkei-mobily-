@@ -1,6 +1,6 @@
 function CSVtoSS() {
 
- const folder = DriveApp.getFolderById('1xrcWwdzEq5zK6VTjuAYLL8sBkv4Y5NZX');//csvを格納したフォルダのID
+ const folder = DriveApp.getFolderById('csvを格納したフォルダのID');//csvを格納したフォルダのID
  const files  = folder.getFiles();
  const file   = files.next();
  const fileId = file.getId();
