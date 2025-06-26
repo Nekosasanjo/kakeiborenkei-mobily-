@@ -3,7 +3,7 @@ const CONSUMER_SECRET = PropertiesService.getScriptProperties().getProperty("ZAI
 const MOBIRY_PAYMENT_ID = parseFloat(PropertiesService.getScriptProperties().getProperty("MOBIRY_PAYMENT_ID"));
 const DEFAULT_CATEGORY_ID = parseFloat(PropertiesService.getScriptProperties().getProperty("DEFAULT_CATEGORY_ID"));
 const DEFAULT_GENRE_ID = parseFloat(PropertiesService.getScriptProperties().getProperty("DEFAULT_GENRE_ID"));
-const manae_wallet="18405154";
+const manae_wallet="スプレッドシートでidを取得した自分の財布";
 
 // 今日の日付を取得
 var date = new Date(); // 現在の日付と時刻を取得
@@ -79,7 +79,7 @@ function getPastData(service) {
   var result = JSON.parse(response.getContentText());
   // Logger.log(result); // 取得したデータを見たい場合コメントアウトを外す
 
-  // 楽天ペイのみの支払いでフィルタリング
+  // モビリーデイズのみの支払いでフィルタリング
   var rakutenPayData = result.money.filter(function(item) {
     return item.from_account_id === MOBIRY_PAYMENT_ID || manae_wallet;
   });
@@ -87,7 +87,7 @@ function getPastData(service) {
   return rakutenPayData
 }
 
-// 楽天ペイ情報をZaimに登録（メイン関数）
+// モビリーデイズ情報をZaimに登録（メイン関数）
 function rakutenPayToZaim() {
   seikikamobi();
   // Gmailで該当メールを検索
@@ -109,7 +109,7 @@ function rakutenPayToZaim() {
   var sheet = SpreadsheetApp.getActiveSheet();
   var lastRow = sheet.getLastRow();
 
-  // 各楽天ペイの支払いについて登録
+  // モビリーデイズの支払いについて登録
   for (var i = 2; i < lastRow+1; i++){
       var usageDate=sheet.getRange(i,1).getValue();
       var usageDate = Utilities.formatDate(usageDate, 'JST', 'yyyy-MM-dd');
