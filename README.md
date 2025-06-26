@@ -12,5 +12,5 @@ GAS(Google Apps Script)で家計簿アプリ「Zaim」にバス定期のモビ�
 元々色々あったのを入れたので、多分実際に必要なのは、表正規.gsとictozaim.gsのはずです。
 
 楽天ペイの支払いをGASでZaimアプリに自動で家計簿入力できるようにした
-https://zenn.dev/masa1991/articles/15ee4be683ace2　。
+https://zenn.dev/masa1991/articles/15ee4be683ace2
 このサイトを参考にしているので、一部楽天ペイの要素が出てきますが、無視してください。
